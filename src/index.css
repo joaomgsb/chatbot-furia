@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --furia-black: #000000;
+  --furia-white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-furia-black text-furia-white font-barlow overflow-x-hidden;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded font-semibold transition-all duration-300 inline-flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-white text-furia-black hover:bg-opacity-80;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-white text-white hover:bg-white hover:text-furia-black;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8;
+  }
+
+  .section {
+    @apply py-12 md:py-24;
+  }
+
+  .heading {
+    @apply font-bold text-3xl md:text-5xl leading-tight;
+  }
+
+  .subheading {
+    @apply font-semibold text-xl md:text-2xl;
+  }
+
+  .angular-border {
+    @apply relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+  }
+}
