@@ -12,8 +12,8 @@ const ChatInterface: React.FC = () => {
   useEffect(() => {
     if (chatContainerRef.current && messages.length > 0) {
       const lastMessage = messages[messages.length - 1];
-      // Só faz scroll se for mensagem do bot
-      if (lastMessage.sender === 'bot') {
+      // Só faz scroll se for mensagem do bot e não tiver a flag preventScroll
+      if (lastMessage.sender === 'bot' && !lastMessage.preventScroll) {
         chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
       }
     }

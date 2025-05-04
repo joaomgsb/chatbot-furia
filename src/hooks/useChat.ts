@@ -95,7 +95,7 @@ export const useChat = () => {
       setMessages(prevMessages => 
         prevMessages.map(msg => 
           msg.id === liveMatchMessageId 
-            ? { ...msg, content: formatLiveMatchMessage(match) }
+            ? { ...msg, content: formatLiveMatchMessage(match), preventScroll: true }
             : msg
         )
       );
@@ -401,7 +401,8 @@ export const useChat = () => {
         id: messageId,
         content: formatLiveMatchMessage(match),
         sender: 'bot',
-        timestamp: new Date()
+        timestamp: new Date(),
+        preventScroll: true
       }]);
       
       return true;
